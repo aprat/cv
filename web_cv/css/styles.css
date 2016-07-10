@@ -1,0 +1,242 @@
+/*
+ * CSS Reset
+ */
+/*html, body, div, span, applet, object, iframe,*/
+/*h1, h2, h3, h4, h5, h6, p, blockquote, pre,*/
+/*a, abbr, acronym, address, big, cite, code,*/
+/*del, dfn, em, img, ins, kbd, q, s, samp,*/
+/*small, strike, strong, sub, sup, tt, var,*/
+/*b, u, i, center,*/
+/*dl, dt, dd, ol, ul, li,*/
+/*fieldset, form, label, legend,*/
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+/*article, aside, canvas, details, embed,*/
+/*figure, figcaption, footer, header,*/
+/*menu, nav, output, ruby, section, summary,*/
+/*time, mark, audio, video {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*border: 0;*/
+    /*font-size: 100%;*/
+    /*font: inherit;*/
+    /*vertical-align: baseline;*/
+/*}*/
+/*!* HTML5 display-role reset for older browsers *!*/
+/*article, aside, details, figcaption, figure,*/
+/*footer, header, menu, nav, section {*/
+    /*display: block;*/
+/*}*/
+/*body {*/
+    /*line-height: 1;*/
+/*}*/
+/*ol, ul {*/
+    /*list-style: none;*/
+/*}*/
+/*blockquote, q {*/
+    /*quotes: none;*/
+/*}*/
+/*blockquote:before, blockquote:after,*/
+/*q:before, q:after {*/
+    /*content: '';*/
+    /*content: none;*/
+/*}*/
+/*table {*/
+    /*border-collapse: collapse;*/
+    /*border-spacing: 0;*/
+/*}*/
+
+/*
+ *  Styles
+ */
+:root {
+    --main-primary-color: #3E7BAF;
+    --main-secondary-color: #EDE5DD;
+    --main-accent-color: #CC5214;
+    --main-background-color: #3D6F99;
+}
+
+@font-face {
+    font-family: oxygen-bold;
+    src: url(../fonts/Oxygen-Bold.ttf);
+}
+
+@font-face {
+    font-family: oxygen-light;
+    src: url(../fonts/Oxygen-Light.ttf);
+}
+
+@font-face {
+    font-family: oxygen-regular;
+    src: url(../fonts/Oxygen-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: oxygen-regular, monospace;
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+h3 {
+    font-family: oxygen-bold, monospace;
+    font-size: 24px;
+}
+
+.full-height {
+    width: 100%;
+    height: 100vh;
+}
+
+.section-header {
+    background-color: #3E7BAF;
+}
+
+#header {
+    background-color: #3E7BAF;
+    width: 100%;
+    display:table;
+}
+
+.section-header h2{
+    color: white;
+    font-family: oxygen-bold, monospace;
+    padding: 20px;
+    font-size: 24px;
+    margin: 0;
+}
+
+.title {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    color: white;
+    font-family: batman, sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+
+.navbar {
+    background-color: #3E7BAF;
+    width: 100%;
+    height: 60px;
+}
+
+.navbar-position {
+    display:table-cell;
+    vertical-align:bottom;
+}
+
+.navbar .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    float: right;
+    font-size: 0;
+}
+
+.navbar .navbar-list .navbar-item {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.navbar .navbar-list .navbar-item a {
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    font-family: oxygen-regular, monospace;
+}
+
+.fix-navbar {
+    position: fixed;
+    top: 0;
+}
+
+.about-me-content {
+    font-family: oxygen-light, monospace;
+    font-size: 24px;
+}
+
+.content-body {
+    font-family: oxygen-regular, monospace;
+    font-size: 22px;
+}
+
+.content-small {
+    font-family: oxygen-regular, monospace;
+    font-size: 20px;
+}
+
+.content-light {
+    font-family: oxygen-light, monospace;
+    font-size: 20px;
+}
+
+.content-tiny {
+    font-family: oxygen-light, monospace;
+    font-size: 14px;
+}
+
+.box {
+    margin: 25px 25px 25px 25px;
+    width: calc(45% - 25px);
+    height: 300px;
+    background-color: #EDE5DD;
+    padding: 10px;
+    display: inline-block;
+    float: left;
+}
+.inner {
+    padding: 50px;
+}
+
+.interest-img {
+    height: 300px;
+    width: 534px;
+}
+
+label {
+    font-family: oxygen-light, monospace;
+    font-size: 18px;
+}
+
+input {
+    font-family: oxygen-light, monospace;
+    font-size: 18px;
+}
+
+.form-section-title {
+    font-family: oxygen-light, monospace;
+    font-size: 18px;
+}
+
+button {
+    width: 300px;
+    height: 50px;
+    margin-top: 15px;
+    font-family: oxygen-bold, monospace;
+    font-size: 20px;
+    border: none;
+    color: white;
+    background-color: #CC5214;
+}
+
+.form-input {
+    margin-bottom: 15px;
+}
+
+#footer {
+    width: 100%;
+    height: 60px;
+    background-color: #3D6F99;
+    font-size: 14px;
+    font-family: oxygen-regular, monospace;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
