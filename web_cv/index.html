@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="js/jquery-3.0.0.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <script src="js/modernizr-custom.js"></script>
     <meta charset="UTF-8">
     <title>Adrià Prat</title>
 </head>
 <body id="main-container">
-<div class="wrap" id="wrap">
 <header class="full-height" id="header">
     <h1 class="title">Adrià Prat</h1>
     <nav class="navbar navbar-position" id="navbar">
-        <ul class="navbar-list">
+        <ul id="navbar-list" class="navbar-list">
             <li class="navbar-item">
                 <a href="#about-me">About me</a>
             </li>
@@ -74,12 +74,12 @@
         <h2>Education</h2>
     </header>
     <div class="inner">
-        <div class="box">
+        <div class="box shake">
             <h3>Web Development Master Bootcamp</h3>
             <p><span class="content-body">KeepCoding.io</span></p>
             <p><span class="content-body">2016 - 2017</span></p>
         </div>
-        <div class="box">
+        <div class="box shake">
             <h3>CFGS DAI</h3>
             <p><span class="content-body">IES Carles Vallbona</span></p>
             <p><span class="content-body">2010 - 2013</span></p>
@@ -116,7 +116,7 @@
     </div>
     </div>
 </section>
-<section id="contact" class="container full-height row container section-container">
+<section id="contact" class="container row container section-container">
     <header class="section-header">
         <h2>Contact</h2>
     </header>
@@ -168,55 +168,48 @@
         </form>
     </div>
     <div class="col-6">
-        <div>
+        <div class="contact">
             <a href="mailto://adria@adriaprat.com">
                 <img src="images/email.png">
-                <span>adria@adriaprat.com</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="https://twitter.com/adria_prat">
                 <img src="images/twitter.png">
-                <span>@adria_prat</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="https://es.linkedin.com/in/adriaprat/en">
                 <img src="images/linkedin.png">
-                <span>https://es.linkedin.com/in/adriaprat/en</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="https://snapchat.com/add/adria_prat">
                 <img src="images/snapchat.png">
-                <span>https://snapchat.com/add/adria_prat</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="https://github.com/aprat">
                 <img src="images/github.png">
-                <span>https://github.com/aprat</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="https://www.youtube.com/channel/UCrqkxPoUeKwOZrCTlhv3zcQ">
                 <img src="images/youtube.png">
-                <span>https://www.youtube.com/channel/UCrqkxPoUeKwOZrCTlhv3zcQ</span>
             </a>
         </div>
-        <div>
+        <div class="contact">
             <a href="http://codepen.io/aprat/">
                 <img src="images/codepen.png">
-                <span>http://codepen.io/aprat/</span>
             </a>
         </div>
     </div>
     </div>
 </section>
-<!--<footer id="footer">-->
-    <!--&copy; 2016 Adrià Prat. All rights reserved-->
-<!--</footer>-->
-</div>
+<footer id="footer" class="container row container section-container">
+    &copy; 2016 Adrià Prat. All rights reserved
+</footer>
 </body>
 <script src="js/menu.js"></script>
+<script src="js/form.js" ></script>
 </html>
