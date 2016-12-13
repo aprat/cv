@@ -2,23 +2,23 @@
  * Created by adriaprat on 10/7/16.
  */
 var inputOther = document.createElement("input");
-inputOther.setAttribute("id","other");
+inputOther.setAttribute("id", "other");
 inputOther.setAttribute("type", "text");
 inputOther.setAttribute("name", "other");
 inputOther.setAttribute("placeholder", "How?");
 inputOther.setAttribute("required", "");
 
 var foundRadio = document.getElementById("found-about-me-4");
-foundRadio.addEventListener('click', function () {
+foundRadio.addEventListener('click', function() {
     if (this.value == 'Other') {
         this.parentNode.appendChild(inputOther);
-    } else if(document.getElementById("other")) {
+    } else if (document.getElementById("other")) {
         this.parentNode.removeChild(inputOther);
     }
 });
 
 var form = document.getElementById("form-contact");
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", function(event) {
     var inputName = document.getElementById("full-name");
     var emailInput = document.getElementById("email");
     var numberInput = document.getElementById("contact-number");
@@ -31,7 +31,40 @@ form.addEventListener("submit", function (event) {
     var subjectInput = document.getElementById("subject");
     var messageInput = document.getElementById("message");
 
-    if (inputName.checkValidity() == false) {
+    var inputNameValid = false;
+    var emailInputValid = false;
+    var numberInputValid = numberInput.value.match(/^[0-9]{9}$/) == null;
+    var foundRadioInputValid = false;
+    var otherInputValid = false;
+    var subjectInputValid = false;
+    var messageInputValid = false;
+
+    var otherInput = document.getElementById("other");
+    if (Modernizr.formvalidation) {
+        inputNameValid = inputName.checkValidity() == false;
+        emailInputValid = emailInput.checkValidity() == false;
+        foundRadioInputValid = foundRadioInput.found_about_me_1.checkValidity() == false;
+        if (otherInput) {
+            otherInputValid = otherInput.checkValidity() == false;
+        }
+        subjectInputValid = subjectInput.checkValidity() == false;
+        messageInputValid = messageInput.checkValidity() == false;
+    } else {
+        inputNameValid = inputName.value.length == 0;
+        emailInputValid = emailInput.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/) == null;
+        foundRadioInputValid = foundRadioInput.found_about_me_1.checked == false &&
+            foundRadioInput.found_about_me_2.checked == false &&
+            foundRadioInput.found_about_me_3.checked == false &&
+            foundRadioInput.found_about_me_4.checked == false;
+        if (otherInput) {
+            otherInputValid = otherInput.value.length == 0;
+        }
+        subjectInputValid = subjectInput.value.length == 0;
+        messageInputValid = messageInput.value.length == 0;
+    }
+
+
+    if (inputNameValid) {
         inputName.focus();
         inputName.style.borderColor = "red";
         event.preventDefault();
@@ -40,7 +73,7 @@ form.addEventListener("submit", function (event) {
         inputName.style.borderColor = "green";
     }
 
-    if (emailInput.checkValidity() == false) {
+    if (emailInputValid) {
         emailInput.focus();
         emailInput.style.borderColor = "red";
         event.preventDefault();
@@ -49,12 +82,12 @@ form.addEventListener("submit", function (event) {
         emailInput.style.borderColor = "green";
     }
 
-    if (numberInput.checkValidity() == false) {
+    if (numberInputValid) {
         numberInput.focus();
         numberInput.style.borderColor = "red";
         event.preventDefault();
         return false;
-    } else if (isNaN(numberInput.value)){
+    } else if (isNaN(numberInput.value)) {
         alert("Contact number is not valid.");
         numberInput.focus();
         numberInput.style.borderColor = "red";
@@ -63,13 +96,12 @@ form.addEventListener("submit", function (event) {
         numberInput.style.borderColor = "green";
     }
 
-    if (foundRadioInput.found_about_me_1.checkValidity() == false) {
+    if (foundRadioInputValid) {
         alert("How did you found about me?");
         event.preventDefault();
         return false;
-    } else if(document.getElementById("other")) {
-        var otherInput = document.getElementById("other");
-        if (otherInput.checkValidity() == false) {
+    } else if (document.getElementById("other")) {
+        if (otherInputValid) {
             otherInput.focus();
             otherInput.style.borderColor = "red";
             event.preventDefault();
@@ -79,7 +111,7 @@ form.addEventListener("submit", function (event) {
         }
     }
 
-    if (subjectInput.checkValidity() == false) {
+    if (subjectInputValid) {
         subjectInput.focus();
         subjectInput.style.borderColor = "red";
         event.preventDefault();
@@ -88,7 +120,7 @@ form.addEventListener("submit", function (event) {
         subjectInput.style.borderColor = "green";
     }
 
-    if (messageInput.checkValidity() == false) {
+    if (messageInputValid) {
         messageInput.focus();
         messageInput.style.borderColor = "red";
         event.preventDefault();
@@ -101,10 +133,11 @@ form.addEventListener("submit", function (event) {
             messageInput.style.borderColor = "red";
             event.preventDefault();
             return false;
-        }else {
+        } else {
             messageInput.style.borderColor = "green";
         }
     }
+
 
 
     // if (document.getElementById("apellidos") &&
